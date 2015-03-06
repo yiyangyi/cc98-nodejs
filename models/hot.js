@@ -1,10 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var objectId = Schema.objectId;
+var ObjectId = Schema.ObjectId;
 
 var HotSchema = new Schema({
-	user_id: { type: objectId },
-	node_id: { type: objectId },
+	user_id: { type: ObjectId },
+	node_id: { type: ObjectId },
+	topic_id: { type: ObjectId },
 	create_at: {
 		type: Date,
 		default: Date.now

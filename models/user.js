@@ -1,12 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var objectId = Schema.objectId;
+var ObjectId = Schema.ObjectId;
 
 var UserSchema = new Schema({
 	// basic
 	name: { type: String },
 	loginname: { type: String },
-	std_id: { type: objectId },
+	std_id: { type: ObjectId },
 	psw: { type: String },
 	url: { type: String },
 	profile_image_url: { type: String },
