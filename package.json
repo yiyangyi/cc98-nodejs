@@ -1,0 +1,27 @@
+{
+  "name": "cc98-nodejs",
+  "version": "1.0.0",
+  "description": "A new version of cc98 forum built with nodejs for ZJUers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yiyangyi/cc98-nodejs.git"
+  },
+  "keywords": [
+    "cc98",
+    "nodejs",
+    "mongoDB"
+  ],
+  "author": "yiyangyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yiyangyi/cc98-nodejs/issues"
+  },
+  "homepage": "https://github.com/yiyangyi/cc98-nodejs",
+  "dependencies": {
+    "express": "^4.12.2"
+  }
+}
