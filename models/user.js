@@ -26,7 +26,7 @@ var UserSchema = new Schema({
 	score: { type: Number, default: 98 },
 	level: { type: String },
 	title: { type: String },
-	create_at: { type: Date, default: Date.now },
+	created_at: { type: Date, default: Date.now },
 	updated_at: { type: Date, default: Date.now },
 });
 
