@@ -13,8 +13,6 @@ var NoteScheam = new Schema(
 	updated_at: { type: Date, default: Date.now }
 );
 
-NoteScheam.index({
-
-});
+NoteSchema.index({ user_id: 1, created_at: -1 });
 
 mongoose.model('Note', NoteSchema);
