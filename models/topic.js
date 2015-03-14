@@ -20,7 +20,10 @@ var TopicSchema = new Schema({
 	last_replyed_at: { type: Date, default: Date.now }
 });
 
-TopicSchema.index();
+TopicSchema.index({ created_at: -1 });
+TopicSchema.index({ top: -1, last_replyed_at: -1 });
+TopicSchema.index({ last_replyed_at: -1 });
+TopicSchema.index({ author_id: 1, created_at: -1 });
 
 TopicSchema.virtual('nodeName').get(function () {
 	
