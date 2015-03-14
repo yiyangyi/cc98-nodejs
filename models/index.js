@@ -9,9 +9,17 @@ mongoose.connect(config.db, function(err) {
 
 //models
 require('./user');
-require('./hot');
+require('./note');
+require('./topic');
+require('./append');
+require('./reply');
 require('./messsage');
+require('./topic_collect');
 
-exports.User = mongoose.model('User');
-exports.Hot = mongoose.model('Hot');
-exports.Message = mongoose.model('Message');
+exports.User          = mongoose.model('User');
+exports.Note          = mongoose.model('Note');
+exports.Topic         = mongoose.model('Topic');
+exports.append        = mongoose.model('Append');
+exports.Reply         = mongoose.model('Reply');
+exports.Message       = mongoose.model('Message');
+exports.topic_collect = mongoose.model('TopicCollect');
