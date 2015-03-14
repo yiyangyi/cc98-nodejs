@@ -9,8 +9,6 @@ var AppendSchema = new Schema({
 	append_at: { type: Date, default: Date.now }
 });
 
-AppendSchema.index({
-	
-});
+AppendSchema.index({ topic_id: -1 });
 
 mongoose.model('Append', AppendSchema);
