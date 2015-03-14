@@ -28,4 +28,4 @@ MessageSchema.index({
 	create_at: -1
 });
 
-mongoose.model("Message", Message);
+mongoose.model("Message", MessageSchema);
