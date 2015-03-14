@@ -13,6 +13,7 @@ var ReplySchema = new Schema({
 	downs: [ Schema.Types.ObjectId ]
 }); 
 
-ReplySchema.index({});
+ReplySchema.index({ topic_id: -1 });
+ReplySchema.index({ author_id: 1, created_at: -1 });
 
 mongoose.model('Reply', ReplySchema);
