@@ -22,10 +22,6 @@ var MessageSchema = new Schema({
 	created_at: { type: Date, default: Date.now }
 });
 
-MessageSchema.index({
-	master_id: 1, 
-	has_read: -1, 
-	create_at: -1
-});
+MessageSchema.index({ master_id: 1, has_read: -1, create_at: -1 });
 
 mongoose.model("Message", MessageSchema);
