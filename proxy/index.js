@@ -1,5 +1,9 @@
-exports.User = require('./user');
+exports.User    = require('./user');
 exports.Message = require('./message');
-exports.Topic = require('./topic');
-exports.Hot = require('./hot');
-exports.Reply = require('./reply');
+exports.Section = require('./section');
+exports.Node    = require('./node');
+exports.Topic   = require('./topic');
+exports.Append  = require('./append');
+exports.Reply   = require('./reply');
+exports.Note    = require('./note');
+exports.collect = require('./topic_collect');
