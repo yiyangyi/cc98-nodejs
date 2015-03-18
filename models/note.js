@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var ObjectId = Schema.ObjectId;
+var ObjectId = Schema..Types.ObjectId;
 
 var NoteScheam = new Schema(
 	user_id: { type: ObjectId },
