@@ -1,4 +1,5 @@
 #!/usr/local/env/ node
+var fs = require('fs');
 var app = require('../app');
 var faye = require('faye');
 var config = require('../config');
@@ -9,6 +10,31 @@ app.set('port', config.port || 3000);
 var server = app.listen(app.get('port'), function() {
     console.log("The server is listen on port %s", config.port);
 });
+
+var serverAuth = {
+	incoming: function(message, callback) {
+		if(message.channel !== '/meta/subscribe') 
+			return callback(message);
+
+		var subscription = message.subcription;
+		var msgToken = message.ext && message.ext.authToken;
+		
+		// Find the right token for the channel
+        this._fileContent = this._fileContent || fs.readFileSync('./tokens.json');
+
+        var registry = JSON.parse(this._fileContent.toString()),
+            token    = registry[subscription];
+
+        // Add an error if the tokens don't match
+        if (token !== msgToken)
+            message.error = 'Invalid subscription auth token';
+
+        // Call the server back now we're done
+        callback(message);
+	}
+};
+
+Bayeux.addExtention(serverAuth);
 
 // Faye should be attached to an existing HTTP server using the attach() method 
 // It will handle all requests to the paths matching the mount path 
