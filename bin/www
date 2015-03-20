@@ -1,9 +1,20 @@
 #!/usr/local/env/ node
 var app = require('../app');
+var faye = require('faye');
 var config = require('../config');
+
+
+var noticePusher = new faye.NodeAdapter({mount: '/faye', timeout: 50});
 
 app.set('port', config.port || 3000);
 
 var server = app.listen(app.get('port'), function() {
     console.log("The server is listen on port %s", config.port);
 });
+
+// Faye should be attached to an existing HTTP server using the attach() method 
+// It will handle all requests to the paths matching the mount path and delegate 
+// all other requests to your handlers.
+noticePusher.attach(server);
+
+
