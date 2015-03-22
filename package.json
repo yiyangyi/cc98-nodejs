@@ -50,6 +50,7 @@
     "pm2": "^0.12.7",
     "ready": "^0.1.1",
     "response-time": "^2.3.0",
+    "socket.io": "^1.3.5",
     "utility": "^1.3.0",
     "validator": "^3.33.0",
     "xmlbuilder": "^2.6.2",
