@@ -10,6 +10,13 @@ io.on('connection', function (socket) {
 
 });
 
+// custom namespace
+var nsp = io.of('/my-namespace');
+nsp.on('connection', function (socket){
+	console.log('someone connected on the path of my-namespace');
+});
+nsp.emit('hi', 'everyone');
+
 // On the client !!!
 // <script src="/socket.io/socket.io.js"></script>
 // <script>
